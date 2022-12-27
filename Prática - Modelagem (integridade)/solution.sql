@@ -18,7 +18,7 @@ CREATE TABLE "customerPhones" (
     type "customerPhonesTypes" NOT NULL
 );
 
-CREATE TABLE "customerAdresses" (
+CREATE TABLE "customerAddresses" (
     id SERIAL PRIMARY KEY,
     "customerId" INTEGER NOT NULL UNIQUE,
     street TEXT NOT NULL,
@@ -73,9 +73,9 @@ ALTER TABLE cities ADD CONSTRAINT cities_fk0 FOREIGN KEY ("stateId") REFERENCES 
 
 ALTER TABLE "customerPhones" ADD CONSTRAINT "customerPhones_fk0" FOREIGN KEY ("customerId") REFERENCES customers(id);
 
-ALTER TABLE "customerAdresses" ADD CONSTRAINT "customerAdresses_fk0" FOREIGN KEY ("customerId") REFERENCES customers(id);
+ALTER TABLE "customerAddresses" ADD CONSTRAINT "customerAddresses_fk0" FOREIGN KEY ("customerId") REFERENCES customers(id);
 
-ALTER TABLE "customerAdresses" ADD CONSTRAINT "customerAdresses_fk1" FOREIGN KEY ("cityId") REFERENCES cities(id);
+ALTER TABLE "customerAddresses" ADD CONSTRAINT "customerAddresses_fk1" FOREIGN KEY ("cityId") REFERENCES cities(id);
 
 ALTER TABLE "bankAccount" ADD CONSTRAINT "bankAccount_fk0" FOREIGN KEY ("customerId") REFERENCES customers(id);
 
