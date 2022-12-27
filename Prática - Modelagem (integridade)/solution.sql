@@ -54,7 +54,7 @@ CREATE TABLE transactions (
     type "transactionsTypes" NOT NULL,
     time TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW(),
     description TEXT NOT NULL,
-    cancelled BOOLEAN NOT NULL
+    cancelled BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE "creditCards" (
