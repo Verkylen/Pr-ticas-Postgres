@@ -66,7 +66,7 @@ CREATE TABLE "creditCards" (
     "expirationMonth" CHAR(2) NOT NULL,
     "expirationYear" CHAR(2) NOT NULL,
     password TEXT NOT NULL,
-    limit INTEGER NOT NULL
+    "limit" INTEGER NOT NULL
 );
 
 ALTER TABLE cities ADD CONSTRAINT cities_fk0 FOREIGN KEY ("stateId") REFERENCES states(id);
