@@ -1,6 +1,6 @@
 CREATE TABLE students (
     id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL UNIQUE,
+    name TEXT NOT NULL,
     cpf CHAR(11) NOT NULL UNIQUE,
     email TEXT NOT NULL UNIQUE
 );
@@ -25,7 +25,7 @@ CREATE TABLE modules (
 
 CREATE TABLE projects (
     id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL UNIQUE,
+    name TEXT NOT NULL,
     "moduleId" INTEGER NOT NULL
 ); 
 

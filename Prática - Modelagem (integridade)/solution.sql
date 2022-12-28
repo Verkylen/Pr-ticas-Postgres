@@ -23,7 +23,7 @@ CREATE TABLE "customerAddresses" (
     "customerId" INTEGER NOT NULL UNIQUE,
     street TEXT NOT NULL,
     number TEXT NOT NULL,
-    complement TEXT NOT NULL,
+    complement TEXT,
     "postalCode" CHAR(8) NOT NULL,
     "cityId" INTEGER NOT NULL
 );
@@ -41,8 +41,8 @@ CREATE TABLE "bankAccount" (
     "customerId" INTEGER NOT NULL,
     "accountNumber" VARCHAR(9) NOT NULL,
     agency VARCHAR(5) NOT NULL,
-    "openDate" DATE NOT NULL,
-    "closeDate" DATE NOT NULL
+    "openDate" DATE NOT NULL DEFAULT CURRENT_DATE,
+    "closeDate" DATE
 );
 
 CREATE TYPE "transactionsTypes" AS ENUM('deposit', 'withdraw');
@@ -62,7 +62,7 @@ CREATE TABLE "creditCards" (
     "bankAccountId" INTEGER NOT NULL,
     name TEXT NOT NULL,
     number CHAR(16) NOT NULL,
-    "securityCode" CHAR(16) NOT NULL,
+    "securityCode" VARCHAR(4) NOT NULL,
     "expirationMonth" CHAR(2) NOT NULL,
     "expirationYear" CHAR(2) NOT NULL,
     password TEXT NOT NULL,
